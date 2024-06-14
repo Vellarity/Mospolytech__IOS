@@ -9,7 +9,6 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        NavigationStack(){
             ZStack{
                 Rectangle().clipShape(/*@START_MENU_TOKEN@*/Circle()/*@END_MENU_TOKEN@*/).frame(width: 200).position(x:-10, y:250)
                 Rectangle().clipShape(/*@START_MENU_TOKEN@*/Circle()/*@END_MENU_TOKEN@*/).frame(width: 200).position(x:350, y:750)
@@ -21,21 +20,20 @@ struct ContentView: View {
                         .bold()
                         .font(.system(size: 50))
                         .padding(.top, 40)
-                    NavigationLink(destination:ArtView()){
-                        Text("Generate!")
-                            .font(.title)
-                            .foregroundStyle(.white)
-                            .bold()
+                    VStack{
+                        NavButtonView(destination: ArtView()){
+                            Text("Generate!")
+                                .font(.title)
+                                .foregroundStyle(.white)
+                                .bold()
+                        }
+                        NavButtonView(destination: FavouritesView()){
+                            Text("Favourites")
+                                .font(.title)
+                                .foregroundStyle(.white)
+                                .bold()
+                        }
                     }
-                    .frame(
-                        minWidth: 0,
-                        maxWidth:.infinity,
-                        minHeight: 0,
-                        maxHeight: 60,
-                        alignment: .center
-                    )
-                    .background(.black)
-                    .clipShape(.rect(cornerRadius: 20.0))
                 }
                 .padding(.all)
                 .frame(
@@ -47,7 +45,7 @@ struct ContentView: View {
                 )
             }
         }
-    }
+    
 }
 
 #Preview {

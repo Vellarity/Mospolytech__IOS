@@ -6,12 +6,16 @@
 //
 
 import SwiftUI
+import SwiftData
 
 @main
 struct random_artApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            NavigationStack(){
+                ContentView()
+            }
         }
+        .modelContainer(for: [ArtLink.self])
     }
 }

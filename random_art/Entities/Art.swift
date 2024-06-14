@@ -7,6 +7,7 @@
 
 import Foundation
 
+
 struct ArtData: Hashable, Codable {
     var data:Art?
 }
@@ -19,4 +20,5 @@ struct Art : Hashable, Codable {
     var description:String?
     var title:String?
 }
+
 
